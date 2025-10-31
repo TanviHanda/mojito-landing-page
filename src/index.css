@@ -4,7 +4,13 @@
   which can cause PostCSS '@import must precede all other statements' errors during dev.
   If you rely on its animations, import the package from JS (e.g. `import 'tw-animate-css'`)
   or use the specific CSS entrypoint the package documents. */
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+/* Google Fonts import removed from CSS because PostCSS requires `@import` to come
+  before all other statements; add this link to `index.html` <head> instead:
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  Alternatively, import the font in JS (e.g. `main.tsx`) with a dynamic <link> or use
+  a font loader. */
 
 /* ========== CUSTOM VARIANTS ========== */
 @custom-variant dark (&:is(.dark *));
